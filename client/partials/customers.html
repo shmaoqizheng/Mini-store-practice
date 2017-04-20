@@ -1,0 +1,37 @@
+<div ng-controller="CustomerController">
+    <div class="row">
+        <div class="col s12">
+            <div class="row">
+                <h5>Add a new customer</h5>
+                <div class="input-field col m6 s12">
+                    <form ng-submit="addCustomer()">
+                        <input id="newCustomer" type="text" ng-model="newCustomer">
+                        <label for="newCustomer">Customer Name</label>
+                        <input class="btn" type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12 m3 right">
+            <input type="text" ng-model="customerFilter" placeholder="search name...">
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Customer Name</th>
+                    <th>Joined on</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="customer in customers | filter: customerFilter">
+                    <td>{{customer.name}}</td>
+                    <td>{{customer.createdAt | date}}</td>
+                    <td><a class="btn red lighten-2" ng-click="removeCustomer(customer._id)"">remove</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

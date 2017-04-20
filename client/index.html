@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <meta charset="utf-8">
+    <title>index</title>
+    <!-- jquery & materialize -->
+    <script src="jquery/dist/jquery.js" charset="utf-8"></script>
+    <script src="materialize/dist/js/materialize.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="materialize/dist/css/materialize.css">
+    <!-- angular -->
+    <script src='angular/angular.js'></script>
+    <script src='angular-route/angular-route.js'></script>
+    <script src='angular-messages/angular-messages.js'></script>
+    <!-- config files -->
+    <script src="assets/js/route.js" charset="utf-8"></script>
+    <script src="assets/js/factory.js" charset="utf-8"></script>
+    <script src="assets/js/controllers.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <nav>
+                <div class="nav-wrapper">
+                    <ul id="nav-mobile" class="left hide-on-med-and-down">
+                        <li><a href="/#!/">Dashboard</a></li>
+                        <li><a href="/#!/products">Products</a></li>
+                        <li><a href="/#!/orders">Orders</a></li>
+                        <li><a href="/#!/customers">Customers</a></li>
+                        <li><a href="/#!/settings">Settings</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div ng-view></div>
+    </div>
+
+</body>
+
+</html>

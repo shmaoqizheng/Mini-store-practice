@@ -1,0 +1,43 @@
+<div ng-controller="ProductController">
+    <div class="row">
+        <div class="col s12 m3">
+            <input type="text" ng-model="searchFilter" placeholder="search...">
+            <button class="btn" ng-click="">Filter</button>
+
+            <h5>Add a new product</h5>
+            <div class="input-field">
+                <input id="newProductName" type="text" ng-model="newProduct.name">
+                <label for="newProductName">Name</label>
+            </div>
+            <div class="input-field">
+                <input id="newProductImageUrl" type="text" ng-model="newProduct.imageUrl">
+                <label for="newProductImageUrl">Image Url</label>
+            </div>
+            <div class="input-field">
+                <textarea id="textarea1" class="materialize-textarea" ng-model="description"></textarea>
+                <label for="textarea1">Description</label>
+            </div>
+            <div class="input-field">
+                <input id="newProductQuantity" type="text" ng-model="newProduct.quantity">
+                <label for="newProductQuantity">Initial Quantity</label>
+            </div>
+            <div class="input-field">
+                <button class="btn" ng-click="addProduct()">Add</button>
+            </div>
+        </div>
+        <div class="col s12 m9">
+            <div class="product" ng-repeat="product in products | filter: searchFilter">
+                <div class="row">
+                    <div class="col s12">
+                        <img ng-src="assets/img/{{product.imageUrl}}" alt="{{product.imageUrl}}" width=180>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <label>{{product.name}} | Quantity: {{product.quantity}}</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
